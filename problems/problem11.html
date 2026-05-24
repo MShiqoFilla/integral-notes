@@ -68,7 +68,7 @@
 	&= \log\prod_{k=1}^{N}\dfrac{k+1}{k} + 1 - \sum_{k=1}^{N}\dfrac{1}{k} = 1 - \left(\sum_{k=1}^{N}\dfrac{1}{k} - \log (N+1)\right) \\
 	&= 1 - \left(\sum_{k=1}^{N+1}\dfrac{1}{k} - \log (N+1)\right) + \dfrac{1}{N+1}
 \end{align*}
-Now taking limits $N\rightarrow \infty$ and by definition of $\gamma$
+Now taking limits $N\rightarrow \infty$ and by definition of the famous Euler-Mascheroni constant: $\gamma$
  we get
 \begin{align*}
 	\int_1^\infty \dfrac{\{x\}}{x^2}\ dx = 1-\lim\limits_{N\rightarrow\infty}\left(\sum_{k=1}^{N+1}\dfrac{1}{k} - \log (N+1)\right) + \lim\limits_{N\rightarrow\infty}\dfrac{1}{N+1} = 1-\gamma.
