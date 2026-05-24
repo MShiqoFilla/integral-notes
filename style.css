@@ -21,6 +21,15 @@ body {
   letter-spacing: -2px;
 }
 
+.maintainer {
+  text-align: right;
+  margin: 40px auto 60px auto;
+  width: min(1400px, 92%);
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+  color: #666;
+}
+
 
 .grid {
   width: min(1400px, 92%);
