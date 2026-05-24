@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 7</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-01-02
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_0^{2\pi}\lfloor2026\sin x\rfloor\,dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+\begin{align*}
+    A=\int_{0}^{2\pi} \lfloor 2026\sin x\rfloor\ dx &= \int_{0}^{\pi} \lfloor 2026\sin x\rfloor\ dx+\int_{\pi}^{2\pi} \lfloor 2026\sin x\rfloor\ dx.
+  \end{align*}
+  Focus on the second integral on the RHS. Set transformation $x \rightarrow  x-\pi$, we get \begin{align*}
+    \int_{\pi}^{2\pi} \lfloor 2026\sin x\rfloor\ dx = \int_{0}^{\pi} \lfloor 2026\sin (x-\pi)\rfloor\ dx = \int_{0}^{\pi} \lfloor -2026\sin x\rfloor\ dx.
+  \end{align*} Therefore
+  \begin{align*}
+    A&=\int_{0}^{\pi} \lfloor 2026\sin x\rfloor\ dx+\int_{\pi}^{2\pi} \lfloor 2026\sin x\rfloor\ dx\\ &=\int_{0}^{\pi} \lfloor 2026\sin x\rfloor\ dx+\int_{0}^{\pi} \lfloor -2026\sin x\rfloor\ dx = \int_{0}^{\pi} \lfloor 2026\sin x\rfloor\ + \lfloor -2026\sin x\rfloor\ dx.
+  \end{align*}
+Using properties of floor function, that is,
+\begin{equation*}
+  \lfloor x\rfloor + \lfloor -x\rfloor = 
+  \begin{cases} 
+    0 & x \in \mathbb{Z} \\
+    -1 & x \notin \mathbb{Z}
+  \end{cases}
+\end{equation*}
+Hence the integrand is $-1$ except on some points  $x\in [0, \pi/2]$ where $2026\sin x \in \mathbb{Z}$ (which the value is 0). Therefore 
+\begin{align*}
+  A=\int_{0}^{2\pi} \lfloor 2026\sin x\rfloor\ dx = -\int_{0}^{\pi}\ dx = -\pi.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

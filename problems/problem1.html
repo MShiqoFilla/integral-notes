@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 1</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-04-04
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_1^\infty\dfrac{1}{e^{x+1}+e^{3-x}}\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+
+This is kinda straightforward, \begin{align*}
+    \int_{1}^{\infty}\dfrac{1}{e^{x+1}+e^{3-x}}\ dx &= \dfrac{1}{e^2} \int_{1}^{\infty}\dfrac{1}{e^{x-1}+e^{1-x}}\ dx = \dfrac{1}{e^2} \int_{0}^{\infty}\dfrac{1}{e^{x}+e^{-x}}\ dx =
+    \dfrac{1}{e^2} \int_{0}^{\infty}\dfrac{e^x}{e^{2x}+1}\ dx \\ &= \dfrac{1}{e^2} \int_{0}^{\infty}\dfrac{d(e^x)}{(e^{x})^2   +1}\
+    = \dfrac{1}{e^2} \cdot \tan^{-1}(x) \Bigr|_1^{\infty} = \dfrac{1}{e^2}\left(\dfrac{\pi}{2}-\dfrac{\pi}{4}\right) =\dfrac{\pi}{4e^2}.
+  \end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

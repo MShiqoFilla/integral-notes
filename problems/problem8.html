@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 8</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-02-15
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int\dfrac{\cos x+x\sin x}{x(x+\cos x)}\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+First we need to notice that \begin{equation*}
+	\dfrac{d}{dx}\left(x(x+\cos x)\right) = 2x+\cos x-x\sin x.
+\end{equation*}
+Now doing some algebraic manipulation on the numerator we get
+\begin{align*}
+	\int\dfrac{\cos x+x\sin x}{x\left(x+\cos x\right)}\ dx &= \int \dfrac{2x+\cos x-x\sin x}{x^2+x\cos x}\ dx - \int \dfrac{2x(1-\sin x)}{x(x + \cos x)}\ dx \\
+	&=\int \dfrac{d(x^2+x\cos x)}{x^2+x\cos x} - 2\int \dfrac{1-\sin x}{x+\cos x}\ dx  \\
+	&= \log \left(x^2+x\cos x\right) - 2\int\dfrac{d(x+\cos x)}{x+\cos x} \\
+	&= \log \left(x^2+x\cos x\right) - 2\log(x+\cos x) + C \\
+	&= \log\left[\dfrac{x^2+x\cos x}{(x+\cos x)^2}\right] + C = \log\left(\dfrac{x}{x+\cos x}\right) + C.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 6</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-12-13
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_0^{\pi/2}\sin(2x)^3\cos x\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+Look that 
+\begin{align*}
+	A &= \int_{0}^{\pi/2} \sin(2x)^3\cos x\ dx = \int_{0}^{\pi/2} (2\sin x\cos x)^3\cos x\ dx = 8\int_{0}^{\pi/2} \sin^3 x\cos^4 x\ dx \\
+	&= 8\int_{0}^{\pi/2} (1-\cos^2 x)\cos^4 x\sin x\ dx = 8 \int_{0}^{\pi/2} (\cos^4x-\cos^6x)\sin x\ dx.
+\end{align*}
+Now let $u =\cos x \Rightarrow du = -\sin x$, we have
+\begin{align*}
+	A&=-8\int_{1}^{0}u^4-u^6\ du = 8\int_{0}^{1} u^4-u^6\ du = 8\left[\dfrac{1}{5}u^5 - \dfrac{1}{7}u^7\right]^1_0 = \dfrac{16}{35}.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

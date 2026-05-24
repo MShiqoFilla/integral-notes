@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 4</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-12-13
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_0^1 x^{13/2}\sqrt{1+x^{5/2}}\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+Let $u=x^{5/2} \Leftrightarrow x = u^{2/5} \Rightarrow dx = \frac{2}{5}u^{5/2}\ dx$. Now we have
+\begin{align*}
+	\int_{0}^{1}x^{13/2}\sqrt{1+x^{5/2}}\ dx=\dfrac{2}{5}\int_{0}^{1}u^{13/5}(1+u)\cdot u^{-3/5}\ du = \dfrac{2}{5}\int_{0}^{1}u^2(1+u)\ du.
+\end{align*} Now set $y=1+u \Rightarrow du = dy$ we get
+\begin{align*}
+	\int_{0}^{1}x^{13/2}\sqrt{1+x^{5/2}}\ dx &= \dfrac{2}{5}\int_{0}^{1}u^2(1+u)\ du = \dfrac{2}{5}\int_{1}^{2}(y-1)^2\sqrt{y}\ dy \\ &= \dfrac{2}{5}\int_{1}^{2}y^{5/2}-2y^{3/2}+y^{1/2}\ dy
+	= \dfrac{2}{5}\left[\dfrac{2}{7}y^{7/2}-\dfrac{4}{5}y^{5/2}+\dfrac{2}{3}y^{3/2}\right]_1^2 \\ &= \dfrac{8}{525}\left(11\sqrt{2}-4\right).
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

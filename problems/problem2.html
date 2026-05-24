@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 2</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-09-08
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_0^1 x^m\ln^n x\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+Set $t = -\ln x \Leftrightarrow x = e^{-t} \Rightarrow dx = -e^{-t}\ dt$, therefore
+  \begin{align*}
+    \int_{0}^{1} x^m \ln^n x\ dx &= \int_{\infty}^{0} e^{-mt} \cdot (-1)^n \cdot t^n \cdot \left(-e^{-t}\right)\ dt =(-1)^n\int_{0}^{\infty} e^{-t(m+1)} t^n\ dt.
+  \end{align*}
+  Next set $s=t(m+1) \Leftrightarrow t = s/(m+1) \Rightarrow dt=ds/(m+1)$,
+  \begin{align*}
+    (-1)^n\int_{0}^{\infty} e^{-t(m+1)} t^n\ dt &=(-1)^n\int_{0}^{\infty} e^{-s} \left(\dfrac{s}{m+1}\right)^n\cdot \dfrac{ds}{m+1} =\dfrac{(-1)^n}{(m+1)^{n+1}}\int_{0}^{\infty} e^{-s} s^n\ ds
+  \end{align*}
+  The last integral is in fact definition of gamma function $\left(\Gamma(n)=\int_{0}^{\infty} e^{-s} s^{n-1}\ ds=(n-1)!, n>0\right)$, hence
+  \begin{equation*}
+    \int_{0}^{1} x^m \ln^n x\ dx = (-1)^n\dfrac{n!}{(m+1)^{n+1}}.
+  \end{equation*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

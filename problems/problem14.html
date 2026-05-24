@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 14</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-05-24
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_{0}^{\pi/2} \sin (x)\sin (2x)\sin (3x)\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+By applying some trigonometric identities, we have
+\begin{equation*}
+  \sin(x)\sin(2x)\sin(3x) = \sin x \cdot (2\sin x\cos x) \cdot (3\sin x-4\sin^3 x) = (6\sin^3 x - 8\sin^5 x)\cos x.
+\end{equation*}
+Now set $u = \sin x$, we have
+\begin{align*}
+  \int_{0}^{\pi/2} \sin (x)\sin (2x)\sin (3x)\ dx &= \int_{0}^{\pi/2} (6\sin^3 x - 8\sin^5 x)\cos x\ dx \\ &= \int_{0}^{1} (6u^3 - 8u^5)\ du = \left[\dfrac{3}{2}u^4-\dfrac{4}{3}u^6\right]^1_0 = \dfrac{1}{6}.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

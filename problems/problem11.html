@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 11</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-03-16
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_1^\infty\dfrac{\{x\}}{x^2}\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+\begin{align*}
+	\int_1^N \dfrac{\{x\}}{x^2}\ dx &= \sum_{k=1}^{N}\int_k^{k+1} \dfrac{\{x\}}{x^2}\ dx = \sum_{k=1}^{N}\int_k^{k+1} \dfrac{x-\lfloor
+	x\rfloor}{x^2}\ dx = \sum_{k=1}^{N}\int_k^{k+1} \dfrac{x-k}{x^2}\ dx \\ &= \sum_{k=1}^{N}\left[\log x+\dfrac{k}{x}\right]_k^{k+1} = \sum_{k=1}^{N}\left(\log\dfrac{k+1}{k}+\dfrac{k}{k+1}-1\right) = \sum_{k=1}^{N}\left(\log\dfrac{k+1}{k}-\dfrac{1}{k+1}\right) \\
+	&= \log\prod_{k=1}^{N}\dfrac{k+1}{k} + 1 - \sum_{k=1}^{N}\dfrac{1}{k} = 1 - \left(\sum_{k=1}^{N}\dfrac{1}{k} - \log (N+1)\right) \\
+	&= 1 - \left(\sum_{k=1}^{N+1}\dfrac{1}{k} - \log (N+1)\right) + \dfrac{1}{N+1}
+\end{align*}
+Now taking limits $N\rightarrow \infty$ and by definition of $\gamma$
+ we get
+\begin{align*}
+	\int_1^\infty \dfrac{\{x\}}{x^2}\ dx = 1-\lim\limits_{N\rightarrow\infty}\left(\sum_{k=1}^{N+1}\dfrac{1}{k} - \log (N+1)\right) + \lim\limits_{N\rightarrow\infty}\dfrac{1}{N+1} = 1-\gamma.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

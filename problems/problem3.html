@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 3</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-11-20
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_0^1 \sin^2(\log x)\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+Let $y = -\log x \Leftrightarrow x = e^{-y} \Rightarrow dx = -e^{-y}\ dy$. Therefore
+\begin{align*}
+	A &= \int_{0}^{1}\sin^2(\log x)\ dx = -\int_{\infty}^{0} \sin^2y \cdot e^{-y}\ dy = \int_{0}^{\infty} \left(\dfrac{1-\cos 2y}{2}\right)e^{-y}\ dy \\ &= \dfrac{1}{2}\int_{0}^{\infty}e^{-y}\ dy - \dfrac{1}{2}\int_{0}^{\infty}e^{-y}\cos 2y\ dy = \dfrac{1}{2} - \dfrac{1}{2}\int_{0}^{\infty}e^{-y}\cos 2y\ dy.
+\end{align*}
+We focus on the last (rightmost) integral by implementing integration by parts, set $u=e^{-y} \Rightarrow du = -e^{-y}\ dy$, and $dv=\cos 2y\ dy \Rightarrow v = \dfrac{1}{2}\sin 2y$,
+\begin{align*}
+	B=\int_{0}^{\infty}e^{-y}\cos 2y\ dy = \left[\dfrac{1}{2}e^{-y}\sin 2y\right]^{\infty}_0+\dfrac{1}{2}\int_{0}^{\infty}e^{-y}\sin 2y\ dy = \dfrac{1}{2}\int_{0}^{\infty}e^{-y}\sin 2y\ dy.
+\end{align*}
+Now we have to do another integration by parts, set $u=e^{-y} \Rightarrow du = -e^{-y}\ dy$, and $dv=\sin 2y\ dy \Rightarrow v = -\dfrac{1}{2}\cos 2y$ gives us
+\begin{align*}
+	B=\dfrac{1}{2}\int_{0}^{\infty}e^{-y}\sin 2y\ dy = \dfrac{1}{2}\left(\left[-\dfrac{1}{2}e^{-y}\cos 2y\right]^{\infty}_0-\dfrac{1}{2}\int_{0}^{\infty}e^{-y}\cos 2y\ dy\right) = \dfrac{1}{2}\left(\dfrac{1}{2} -\dfrac{1}{2}B\right) = \dfrac{1}{4} - \dfrac{1}{4}B.
+\end{align*}
+Therefore $B=\dfrac{1}{5}$. Hence we get the solution for $A$,
+\begin{equation*}
+	A = \dfrac{1}{2}-\dfrac{1}{2}B = \dfrac{1}{2} - \dfrac{1}{10} = \dfrac{2}{5}.
+\end{equation*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 

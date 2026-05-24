@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 5</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2025-12-13
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_{\pi/4}^{\pi/3}\dfrac{dx}{\sin^3x\cos^5x}$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+By given question we have 
+\begin{equation*}
+	\int_{\pi/4}^{\pi/3} \dfrac{dx}{\sin^3x \cos^5x}=\int_{\pi/4}^{\pi/3} \csc^3 x\sec^5 x\ dx = \int_{\pi/4}^{\pi/3} \csc^3x\sec^3x\sec^2x\ dx.
+\end{equation*}
+Now set $u=\tan x$ we have $du = \sec^2 x$ and also $\csc x = \frac{\sqrt{u^2+1}}{u}$ and $\sec x = \sqrt{u^2+1}$. Therefore the problem changes to
+\begin{align*}
+	\int_{\pi/4}^{\pi/3} \dfrac{dx}{\sin^3x \cos^5x} &= \int_{1}^{\sqrt{3}} \left(\dfrac{\sqrt{u^2+1}}{u}\right)^3\left(\sqrt{u^2+1}\right)^3\ du = \int_{1}^{\sqrt{3}} 
+	\left(u+\dfrac{1}{u}\right)^3\ du \\ &= \int_{1}^{\sqrt{3}} u^3+3u+\dfrac{3}{u}+\dfrac{1}{u^3}\ du
+	= \left[\dfrac{1}{4}u^4 + \dfrac{3}{2}u^3+3\log u-\dfrac{1}{2u^2}\right]_1^{\sqrt{3}} \\ &= \dfrac{16}{3} + \dfrac{3}{2}\log3.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 
