@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 16</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-06-07
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int_{-1}^1x^{2025}\ln\left(1+e^x\right)\ dx$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+Set $u= -x \Rightarrow dx = -du$, we get
+\begin{align*}
+    A &= \int_{-1}^1x^{2025}\ln\left(1+x\right)\ dx = \int_{1}^{-1}-u^{2025}\ln\left(1+e^{-u}\right) \cdot -du = -\int_{-1}^{1}u^{2025}\ln\left(\dfrac{1+e^{u}}{e^u}\right)\ du\\
+    &= -\int_{-1}^{1}u^{2025}\ln\left(1+e^{-u}\right)du + \int_{-1}^1u^{2025}\ln e^u\ du = -A + \int_{-1}^1u^{2026}\ du.
+\end{align*}
+
+Therefore,
+\begin{align*}
+    2A = \int_{-1}^1u^{2026}\ du \Leftrightarrow A = \dfrac{1}{2}\left[\dfrac{u^{2027}}{2027}\right]^1_{-1} = \dfrac{1}{2} \cdot \dfrac{2}{2027} = \dfrac{1}{2027}.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 
