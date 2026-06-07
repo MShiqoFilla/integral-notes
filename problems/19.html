@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+  <title>Problem 19</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+      },
+      svg: {
+        fontCache: 'global'
+      }
+    };
+  </script>
+
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+
+  <script src="../script.js"></script>
+</head>
+
+<body>
+
+  <div class="problem-page">
+
+    <div class="page-header">
+      <a class="back-link" href="../index.html">
+        ← Problems
+      </a>
+      <div class="date-badge">
+        Added at: 2026-06-07
+      </div>
+    </div>
+
+    <section class="problem-section">
+
+      <div class="problem-formula">
+        $$\int \dfrac{dx}{(3x^2+2)\sqrt{x^2+1}}$$
+      </div>
+
+    </section>
+
+    <section class="problem-section">
+
+      <h2 class="section-title">
+        <strong>Solution</strong>
+      </h2>
+
+      <div class="solution-box">
+
+Set $x=\tan u \Rightarrow dx = \sec^2 u\ du$, we get
+\begin{align*}
+    \int \dfrac{dx}{(3x^2+2)\sqrt{x^2+1}} &= \int \dfrac{\sec^2 u}{(3\tan^2u+2)\sqrt{\tan^2u+1}} \ du = \int \dfrac{\sec^2 u}{\left(3\sec^2 u - 1\right)\sec u}\ du = \int \dfrac{\sec u}{3\sec^2 u - 1}\ du.
+\end{align*}
+Now multiply both numerator and denominator with $\cos^2u$,
+\begin{align*}
+    \int \dfrac{\sec u}{3\sec^2 u - 1}\ du = \int \dfrac{\sec u}{3\sec^2 u - 1}\cdot \dfrac{\cos^2u}{\cos^2u}\ du = \int \dfrac{\cos u}{3-\cos^2 u}\ du = \int\dfrac{\cos u}{2+\sin^2u}\ du.
+\end{align*}
+Finally Set $t=\sin u \Rightarrow dt = \cos u$,
+\begin{align*}
+    \int\dfrac{\cos u}{2+\sin^2u}\ du &= \int \dfrac{dt}{2+t^2} = \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{t}{\sqrt{2}}\right) + C = \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{\sin u}{\sqrt{2}}\right) + C \\ &= \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{\sin\left(\arctan x\right)}{\sqrt{2}}\right) + C = \dfrac{1}{\sqrt{2}}\arctan\left(\dfrac{1}{\sqrt{2}}\dfrac{x}{\sqrt{x^2+1}}\right) + C.
+\end{align*}
+
+</div>
+    </section>
+
+  </div>
+
+</body>
+</html> 
