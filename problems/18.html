@@ -6,7 +6,7 @@
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0">
 
-  <title>Problem 17</title>
+  <title>Problem 18</title>
 
   <link rel="stylesheet" href="../style.css">
 
@@ -49,7 +49,7 @@
     <section class="problem-section">
 
       <div class="problem-formula">
-        $$\int_{-1}^1x^{2025}\ln\left(1+e^x\right)\ dx$$
+        $$\int \dfrac{3x^{13}+2x^{11}}{\left(2x^4+3x^2+1\right)^4} \ dx$$
       </div>
 
     </section>
@@ -62,15 +62,17 @@
 
       <div class="solution-box">
 
-Set $u= -x \Rightarrow dx = -du$, we get
+Multiply both numerator and denominator with $x^{-16}$, we get
 \begin{align*}
-    A &= \int_{-1}^1x^{2025}\ln\left(1+x\right)\ dx = \int_{1}^{-1}-u^{2025}\ln\left(1+e^{-u}\right) \cdot -du = -\int_{-1}^{1}u^{2025}\ln\left(\dfrac{1+e^{u}}{e^u}\right)\ du\\
-    &= -\int_{-1}^{1}u^{2025}\ln\left(1+e^{-u}\right)du + \int_{-1}^1u^{2025}\ln e^u\ du = -A + \int_{-1}^1u^{2026}\ du.
+    \int \dfrac{3x^{13}+2x^{11}}{\left(2x^4+3x^2+1\right)^4} \ dx = \int \dfrac{3x^{13}+2x^{11}}{\left(2x^4+3x^2+1\right)^4} \cdot \dfrac{x^{-16}}{(x^{-4})^4} \ dx = \int \dfrac{3x^{-3}+2x^{-5}}{\left(2+3x^{-2}+x^{-4}\right)^4} \ dx.
 \end{align*}
-
-Therefore,
+Now set $u=2+3x^{-2}+x^{-4} \Rightarrow du = -6x^{-3} -4x^{-5}$. Therefore we get
 \begin{align*}
-    2A = \int_{-1}^1u^{2026}\ du \Leftrightarrow A = \dfrac{1}{2}\left[\dfrac{u^{2027}}{2027}\right]^1_{-1} = \dfrac{1}{2} \cdot \dfrac{2}{2027} = \dfrac{1}{2027}.
+    \int \dfrac{3x^{-3}+2x^{-5}}{\left(2+3x^{-2}+x^{-4}\right)^4} \ dx = -\dfrac{1}{2}\int \dfrac{-6x^{-3}-4x^{-5}}{\left(2+3x^{-2}+x^{-4}\right)^4} \ dx = -\dfrac{1}{2}\int\dfrac{du}{u^4} = -\dfrac{1}{2}\left(-\dfrac{u^{-3}}{3}\right) + C = \dfrac{1}{6}u^{-3} + C.
+\end{align*}
+Hence,
+\begin{align*}
+    \int \dfrac{3x^{13}+2x^{11}}{\left(2x^4+3x^2+1\right)^4} \ dx = \dfrac{1}{6}\left(2+3x^{-2}+x^{-4}\right)^{-3} + C.
 \end{align*}
 
 </div>
