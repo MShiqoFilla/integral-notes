@@ -14,11 +14,35 @@ body {
 
 .title {
   text-align: center;
-  margin-top: 40px;
+  margin-top: 90px;
   font-family: "JetBrains Mono", monospace;
   font-weight: 400;
   font-size: 56px;
   letter-spacing: -2px;
+}
+
+.github-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+
+  padding: 10px 18px;
+
+  border: 2px solid #ffd700;
+  border-radius: 8px;
+
+  background: white;
+  color: black;
+
+  text-decoration: none;
+  font-family: "JetBrains Mono", monospace;
+  font-size: 14px;
+
+  transition: 0.2s;
+}
+
+.github-button:hover {
+  background: #ffd700;
 }
 
 .maintainer {
